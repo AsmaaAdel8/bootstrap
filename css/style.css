@@ -49,9 +49,25 @@ a {
 }
 .carousel .icons i:hover{
     color: cornflowerblue;
+} 
+.cards{
+    display: grid;
+    grid-template-columns:repeat(3,1fr);
+    row-gap: 20px;
+    column-gap: 25px;
 }
 .cards .card{
     position: relative;
+    height: 45rem;
+    margin: auto;
+}
+.cards .card .card-img-top{
+    height: 32rem;
+}
+.cards .card a{
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
 }
 .cards .card::before{
     position: absolute;
@@ -130,14 +146,20 @@ a {
     transform: scale(1.1,1.1);
     transition: 0.5s;
 }
+.under-bar{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin: auto;
+    grid-gap: 20px;
+}
 .under-bar .card{
     width: 250px; 
     height: 20rem; 
     box-shadow: -5px -5px 20px 10px rgb(201, 198, 241);
 }
-.under-bar :-webkit-any(h3,.h4):hover{
-    color: blueviolet;
-    transition : 0.5s;
+.foot{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
 }
 .trans .btn{
     box-shadow: -5px -5px 20px 10px rgb(147, 141, 219);
@@ -164,15 +186,28 @@ a {
     .slide .carousel-indicators{
         margin-right: -22px;
     }
+    .slide .icons{
+        font-size: 40px;
+       right: 0px;
+    }
     .section3{
         display: grid;
-        grid-template-columns: 2;
+        grid-template-columns: 1fr;
         grid-auto-rows: auto;
     }
     .section3 .card{
         width: 70vw;
         height: 80vh;
-        font-size: 10px;
+        font-size: 13px;
+        position: relative;
+    }
+    .section3 .card a{
+        position: absolute;
+        top: 29rem;
+        right: 0rem;
+    }
+    .section3 .card .cam{
+        height: 68%;
     }
     .sec{
         flex-direction: column;
@@ -243,7 +278,7 @@ a {
     }
     .section5 ul {
        position: absolute;
-        top: 80vh;
+        top: 82vh;
         left: 0px;
     }
     .under-bar{
@@ -251,5 +286,13 @@ a {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+    .foot .bad{
+        text-align: center;
+        font-size: 12px;
+    }
+    .foot #im{
+        height: 60px;
+        width: 80px;
     }
 }
