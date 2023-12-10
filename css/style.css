@@ -13,45 +13,66 @@ a {
 .navbar{
     z-index: 5;
     position: fixed;
+    max-height: 14%;
     width: 100%;
-    height: 16%;
 } 
 .navbar .head .drop{
-    width:100px;
-    height: 60%;
+    min-height: 60%;
     position: absolute;
-    right: 0;
+    right: 5px;
+} 
+.navbar form{
+    grid-template-columns: 2fr 1fr 1fr;
 }
-.navbar img{
-    border-radius: 50%;
+.carousel{
+    position: relative;
 }
 .carousel .title{
     position: absolute;
     z-index: 2;
     background-color: rgba(150, 180, 235 ,0.4);
-    width: 60%;
-    height: 8rem;
+    min-height: 8rem;
     border: 0pt;
     text-align: center;
-    top: 29rem;
-    left: 14rem;
+    top: 27rem;
+    left: 9rem;
+}
+.carousel .carousel-inner{
+    max-height: 98vh;
 }
 .carousel .icons{
+    z-index: 3;
+    display: grid;
+    grid-template-columns:1fr;
+ grid-template-rows: repeat(5,1fr);
+ row-gap: 5px;
     position: absolute;
-    position: fixed;
-    z-index: 4;
-    width: 4rem;
-    height: 15rem;
+    align-items: end;
+    top: 15rem;
+    right: -36rem;
+    justify-content: center;
     font-size: 60px;
-    text-align: center;
-    right: 30px;
-    top:10rem ;
+    position: fixed;
 }
 .carousel .icons i:hover{
     color: cornflowerblue;
 }
+.section3{
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 20px;
+}
 .cards .card{
     position: relative;
+    height: 45rem;
+    margin: auto;
+}
+.cards .card .card-img-top{
+    height: 32rem;
+}
+.cards .card a{
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
 }
 .cards .card::before{
     position: absolute;
@@ -89,55 +110,64 @@ a {
     height: 100%;
     width: 100%;
 }
-.section5 a img{
-    height: 100%;
-    width: 95%;
+.sec{
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 10px;
 }
 .section4:hover{
     transform: scale(0.9,0.9);
 }
 .section5{
     border:1px solid gray;
-     box-shadow: rgb(201, 198, 241) -5px 5px 20px 10px; 
-     width:90%; 
-     overflow: hidden;
-     height:60vh;
-     line-height: 2rem;
-     font-size: larger;
-     border-radius: 3%;
+    box-shadow: rgb(201, 198, 241) -5px 5px 20px 10px;  
+    overflow: hidden;
+    min-height:60vh;
+    line-height: 2rem;
+    border-radius: 3%;
+    grid-template-columns: 1fr 2fr;
 }
-.sss{
-    display: grid;
-   grid-template-columns: 2fr 1fr;
-    grid-template-rows: 60vh;
+.behind{
+    grid-template-columns: 2fr 1fr;
+}
+.section5 .postcard__tagbox{
+    grid-template-columns: 1fr 1fr 2fr;
+    list-style-type: none;
 }
 .section5 li{
-    height: 30px;
+   min-height: 30px;
     text-align: center; 
-    width: 100px;
 }
-.section5 .line{
-    width: 60px; 
-    height: 4px; 
-     border-radius: 10%;
-     margin-left: 15px;
+.section5 .line{ 
+    min-height: 4px; 
+    border-radius: 10%;
+    margin: auto;
+    width: 200px;
+}
+.section5 .img .postcard__img{
+    min-height: 100%;
 }
  .section5:hover .line{
-  transform: scaleX(1.9);
+  transform: scaleX(1.5);
   transition: 0.5s;
 }
 .section5:hover .img{
     transform: scale(1.1,1.1);
     transition: 0.5s;
+    overflow-x: hidden;
 }
-.under-bar .card{
-    width: 250px; 
-    height: 20rem; 
+.under-bar{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin: auto;
+    grid-gap: 20px;
+}
+.under-bar .card{ 
+    max-height: 20rem; 
     box-shadow: -5px -5px 20px 10px rgb(201, 198, 241);
 }
-.under-bar :-webkit-any(h3,.h4):hover{
-    color: blueviolet;
-    transition : 0.5s;
+.foot{
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 10px;
 }
 .trans .btn{
     box-shadow: -5px -5px 20px 10px rgb(147, 141, 219);
@@ -146,7 +176,6 @@ a {
 .trans textarea{
     min-height: calc(1.5em + .75rem + 2px);
     border: 0;
-     width: 100%;
     padding: 10px;
     border-radius: 5px;
 }
@@ -155,35 +184,46 @@ a {
 }
 @media(max-width:567px) {
     body{
-        overflow-x: hidden;
+        /* overflow-x: hidden; */
+        margin: auto;
     }
-    .slide .title{
-        margin-left: -60px;
-        height: 170px;
+    .navbar .head a .img{
+        max-height: 12%;
     }
-    .slide .carousel-indicators{
-        margin-right: -22px;
+    .carousel .icons{
+        right: 0%;
+        top: 12rem;
+        font-size: 50px;
+    }
+    .carousel .title{
+        left: 50px;
+        top: 24rem;
     }
     .section3{
         display: grid;
-        grid-template-columns: 2;
-        grid-auto-rows: auto;
+        grid-template-columns: 350px;
+        margin-left: 50px;
     }
     .section3 .card{
-        width: 70vw;
-        height: 80vh;
-        font-size: 10px;
+        font-size: 13px;
+        position: relative;
+    }
+    .section3 .card a{
+        position: absolute;
+        top: 42.5rem;
+        right: 1rem;
+        max-height: 37px;
+    }
+    .section3 .card .cam{
+        max-height: 25rem;
     }
     .sec{
-        flex-direction: column;
-        margin: auto;
-        width: 100vw;
-        height: auto;
-        margin-bottom: 20rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3,600px);
+        row-gap: 20px;
     }
     .sec .section4{
         margin: auto;
-        width: 50vw;
         text-align: center;
         margin-left: -10px;
         margin-right: 5px;
@@ -191,65 +231,42 @@ a {
      .sec .section4 .card-body{
         text-align: center;
         margin: auto;
-        width: 70vw;
-        height: 17rem;
+        min-height: 17rem;
     } 
-    .section4 .card-img-overlay{
-        width: 100%;
-    }
     .section4 #text{
         text-align: center;
-        width: 100%;
         font-size:20px ;
         font-weight: bold;
     }
-    .section4 .rounded-circle{
-        margin-top: -50ex;
-        margin-bottom: -170px;
-    }
-    .section5 {
-       flex-direction: column;
-       width: 100%;
-       height: 90vh;
-       margin: auto;
-       margin-left: 5px;
-       position: relative;
-    }
-     .section5 a .imge{
-       width: 100%;
-       height: 30%;
-       transform: scale(5,4);
-       margin-left: 165px;
-       margin-top: 80px;
-    } 
-    .section5 .postcard__text{ 
-       margin: auto;
-        margin-top:50px;
-        line-height: 25px;
-    }
-    .section5 .body2{
-        margin-top: -10px;
-    }
-    .body2 .tag{
-        margin-top: -300px;
-    }
-    .section5 .body1{
-        margin-bottom: 200px;
-    }
-    .section5 .article{
+    .section5{
+        position: relative;
+        grid-template-columns: 450px;
+        grid-template-rows: 1fr 2fr;
         text-align: center;
-        font-size: 15px;
-        margin-left: -50px;
+        justify-content: center;
+        align-items: center;
+        max-height: 45rem;
     }
-    .section5 ul {
-       position: absolute;
-        top: 80vh;
-        left: 0px;
+    .section5 .postcard__tagbox{
+        align-items: center;
+        justify-content: space-between;
+        margin-top: -20px;
+    }
+    .section5 .postcard__img{
+        width: 100%;
+        overflow: hidden;
+    }
+    .behind{
+        grid-template-rows: 2fr 1fr;
     }
     .under-bar{
-        display: flex;
-        flex-direction: column;
+        grid-template-columns: 300px;
+        row-gap: 20px;
+        column-gap: 20px;
         align-items: center;
         justify-content: center;
+    }
+    .foot{
+        grid-template-columns: 500px;
     }
 }
